@@ -1,0 +1,15 @@
+<h1 class="hero-title text-center">Listings</h1>
+<section class="container">
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+        <%@listings.each do |listing|%>
+        <div class="col mb-4">
+            <div class="card border-dark h-100">
+                <div class="card-body">
+                    <h5><%=listing.title%></h5>
+                    <p class="card-text text-secondary"><%=listing.description%></p>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </div>
+</section>
