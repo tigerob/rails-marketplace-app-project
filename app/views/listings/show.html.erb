@@ -1,2 +1,6 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<section class='container d-flex flex-column flex-md-row px-2 my-2 my-md-5'>
+    <div class='sidebar col-lg-4 p-0 mx-2 d-md-block'> 
+        <h1 class='mb-sm-2 mb-md-5'><%=@listing.title%></h1>
+        <h5 class='text-muted'>Condition: <%=@listing.condition%></h5>
+        <h5 class='text-muted'>Price: <%=@listing.price%></h5>
+</section>

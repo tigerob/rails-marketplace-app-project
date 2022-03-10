@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
     
   root to: "pages#home"
-  get "/listings", to: "listings#index"
-  get "listings/show", to, "listings#show"
+  get "listings", to: "listings#index", as: "listings"
+  get "listings/:id", to: "listings#show", as: "listing"
 
 end
