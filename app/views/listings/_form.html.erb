@@ -15,10 +15,11 @@
         <%=form.number_field :price%>
     </div>
 
-    <div class='form-group mb-3'> 
-        <%=form.label :condition, class: "form-label"%>
-        <%=form.select :condition, @conditions.map {|condition| format_condition(condition)}, class: "form-select"%>
-    </div>
+    <p class="mb-3">Condition</p>
+    <%@conditions.each do |c|%>
+        <%=form.label :condition, format_condition(c), class: "form-label mr-1" %>
+        <%=form.radio_button :condition, c, class:"mr-2"%>
+    <%end%>
 
     <div class='form-group mb-3'> 
         <%=form.label :description, class: "form-label"%>
@@ -66,8 +67,6 @@
     </div>
 
     <p class="mb-3">Energy-efficiency rating</p>
-        <%=form.label :energy_efficiency, "Unsure", class: "form-label mr-1" %>
-        <%=form.radio_button :energy_efficiency, nil, class:"mr-3"%>
         <%=form.label :energy_efficiency, 1, class: "form-label mr-1" %>
         <%=form.radio_button :energy_efficiency, 1, class:"mr-3"%>
         <%=form.label :energy_efficiency, 2, class: "form-label mr-1" %>
