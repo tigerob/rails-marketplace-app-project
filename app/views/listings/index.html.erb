@@ -5,8 +5,8 @@
         <div class="col mb-4">
             <div class="card border-dark h-100">
                 <div class="card-body">
-                    <h5><%=listing.title%></h5>
-                    <p class="card-text text-secondary"><%=listing.description%></p>
+                    <h5><%=link_to "#{listing.title}", listing_path(listing.id)%></h5>
+                    <h5><%=format_price(listing.price)%></h5>
                 </div>
             </div>
         </div>

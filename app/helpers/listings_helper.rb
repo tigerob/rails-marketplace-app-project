@@ -3,6 +3,10 @@ module ListingsHelper
         "$#{price/100}"
     end
     def format_condition(condition)
-        condition.gsub("_", " - ").capitalize
+        if condition == "brand_new"
+            condition.gsub("_", " ").capitalize
+        else
+            condition.gsub("_", " - ").capitalize
+        end
     end
 end
