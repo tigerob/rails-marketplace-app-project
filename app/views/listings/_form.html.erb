@@ -1,0 +1,85 @@
+<%=form_with model: @listing, local: true do |form|%>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :category_id, class: "form-label"%>
+        <%=form.select :category_id, @categories.map {|category| [category.name, category.id]}, class: "form-select"%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :title, class: "form-label"%>
+        <%=form.text_field :title%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :price, "Price $", class: "form-label"%>
+        <%=form.number_field :price%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :condition, class: "form-label"%>
+        <%=form.select :condition, @conditions.map {|condition| format_condition(condition)}, class: "form-select"%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :description, class: "form-label"%>
+        <%=form.text_area :description, class: "form-control"%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :postcode, "Location (postcode)", class: "form-label"%>
+        <%=form.number_field :postcode%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :brand, class: "form-label"%>
+        <%=form.text_field :brand%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :model, class: "form-label"%>
+        <%=form.text_field :model%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :finish, "Finish (colour and material)", class: "form-label"%>
+        <%=form.text_field :finish%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :capacity, "Capacity (litres)", class: "form-label"%>
+        <%=form.number_field :capacity%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :height, "Height (mm)", class: "form-label"%>
+        <%=form.number_field :height%>
+    </div>
+
+    <div class='form-group mb-3'> 
+        <%=form.label :width, "Width (mm)", class: "form-label"%>
+        <%=form.number_field :width%>
+    </div>
+
+    <div class='form-group mb-3'>
+        <%=form.label :depth, "Depth (mm)", class: "form-label"%>
+        <%=form.number_field :depth%>
+    </div>
+
+    <p class="mb-3">Energy-efficiency rating</p>
+        <%=form.label :energy_efficiency, "Unsure", class: "form-label mr-1" %>
+        <%=form.radio_button :energy_efficiency, nil, class:"mr-3"%>
+        <%=form.label :energy_efficiency, 1, class: "form-label mr-1" %>
+        <%=form.radio_button :energy_efficiency, 1, class:"mr-3"%>
+        <%=form.label :energy_efficiency, 2, class: "form-label mr-1" %>
+        <%=form.radio_button :energy_efficiency, 2, class:"mr-3"%>
+        <%=form.label :energy_efficiency, 3, class: "form-label mr-1" %>
+        <%=form.radio_button :energy_efficiency, 3, class:"mr-3"%>
+        <%=form.label :energy_efficiency, 4, class: "form-label mr-1" %>
+        <%=form.radio_button :energy_efficiency, 4, class:"mr-3"%>
+        <%=form.label :energy_efficiency, 5, class: "form-label mr-1" %>
+        <%=form.radio_button :energy_efficiency, 5, class:"mr-3"%>
+
+    <div class='actions'> 
+        <%=form.submit%>
+    </div>
+<%end%>
