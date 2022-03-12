@@ -1,4 +1,11 @@
 <section class='container d-flex flex-column flex-md-row px-2 my-2 my-md-5'>
+
+    <div class='content col-12 col-md-7 col-lg-8 p-0 pr-md-3'>
+        <div class='col-12 p-0 main-preview mb-4'>
+            <%=image_tag "default_fridge", alt: "stock image of refridgerator", class:"thumbnail card-img top"%>
+        </div>
+    </div>
+
     <div class='sidebar col-lg-4 p-0 mx-2 d-md-block'> 
         <h1 class='mb-sm-2 mb-md-5'><%=@listing.title%></h1>
         <h5 class='text-muted'>Price: <%=format_price(@listing.price)%></h5>
