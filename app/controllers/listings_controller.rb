@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :define_listing, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
   before_action :define_form_variables, only: [:new, :edit]
   
   def index
@@ -20,7 +21,7 @@ class ListingsController < ApplicationController
         redirect_to @listing, notice: "You have successfully created a listing"
     else
       define_form_variables
-      render "new", notice: "Error creating listing. Ensure all fields are filled out correctly."
+      render "new", alert: "Error creating listing. Ensure all fields are filled out correctly."
     end
   end
 
@@ -33,7 +34,7 @@ class ListingsController < ApplicationController
         redirect_to @listing, notice: "You have successfully updated the listing"
     else
       define_form_variables
-      render "edit", notice: "Error creating listing. Ensure all fields are filled out correctly."
+      render "edit", alert: "Error creating listing. Ensure all fields are filled out correctly."
     end
   end
 
@@ -46,6 +47,12 @@ class ListingsController < ApplicationController
 
   def define_listing
     @listing = Listing.find(params[:id])
+  end
+
+  def authorize_user
+    unless @listing.user_id == current_user.id
+      redirect_to listings_path, alert: "You are not authorised to access that page"
+    end
   end
 
   def define_form_variables
