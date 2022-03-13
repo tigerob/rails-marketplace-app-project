@@ -4,7 +4,7 @@
         <%@listings.each do |listing|%>
         <div class="col mb-4">
             <div class="card border-dark h-100">
-                <%=image_tag "default_fridge.jpg", alt: "stock image of refridgerator", class: "thumbnail card-img top"%>
+                <%=display_photo(listing)%>
                 <div class="card-body">
                     <h5><%=link_to "#{listing.title}", listing_path(listing.id)%></h5>
                     <h5><%=format_price(listing.price)%></h5>
