@@ -39,7 +39,7 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing.destroy
-    render "index", notice: "You have successfully deleted the listing"
+    redirect_to listings_path, notice: "You have successfully deleted the listing"
   end
 
   private

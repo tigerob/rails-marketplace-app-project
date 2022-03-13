@@ -20,4 +20,12 @@
         <h5 class='text-muted'>Width: <%=@listing.width%>mm</h5>
         <h5 class='text-muted'>Depth: <%=@listing.depth%>mm</h5>
         <h5 class='text-muted'>Energy-efficiency rating out of 5: <%=@listing.energy_efficiency%></h5>
+
+        <%if current_user && current_user.id == @listing.user_id%>
+            <div class='d-flex justify-content-equally'>
+                <%= link_to "Edit", edit_listing_path(@listing.id), class: "btn btn-warning mr-2" %>
+                <%= link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
+            </div>
+        <%end%>
+
 </section>
