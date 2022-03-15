@@ -82,9 +82,10 @@ class ListingsController < ApplicationController
   def define_form_variables
     @categories = Category.all
     @conditions = Listing.conditions.keys
+    @features = Feature.all
   end
   
   def listing_params
-    params.require(:listing).permit(:title, :description, :price, :condition, :postcode, :brand, :model, :finish, :capacity, :height, :width, :depth, :energy_efficiency, :category_id, :photo)
+    params.require(:listing).permit(:title, :description, :price, :condition, :postcode, :brand, :model, :finish, :capacity, :height, :width, :depth, :energy_efficiency, :category_id, :photo, feature_ids: [])
   end
 end

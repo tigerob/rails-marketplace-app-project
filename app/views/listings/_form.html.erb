@@ -31,6 +31,14 @@
         <%=form.text_area :description, class: "form-control"%>
     </div>
 
+    <p class="mb-3">Features</p>
+    <div class="form-check form-check-line mb-3 ml-2">
+        <%=form.collection_check_boxes :feature_ids, @features, :id, :name  do |block|%>
+            <%=block.label class: "form-check-label"%>
+            <%=block.check_box class: "form-check-line mr-2"%>
+        <%end%>
+    </div>
+
     <div class='form-group mb-3'> 
         <%=form.label :postcode, "Location (postcode)", class: "form-label"%>
         <%=form.number_field :postcode%>
