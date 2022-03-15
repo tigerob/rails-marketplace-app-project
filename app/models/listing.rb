@@ -10,7 +10,7 @@ class Listing < ApplicationRecord
 
   # data validations
   validates :title, presence: true, length: {maximum: 50}
-  validates :price, presence: true, numericality: {only_integer: true}, length: {maximum: 9}
+  validates :price, presence: true, numericality: {only_integer: true}, length: {maximum: 6}
   validates :photo, :condition, presence: true
   validates :description, presence: true, length: {maximum: 750}
   validates :postcode, numericality: {only_integer: true}, length: {is: 4}
@@ -24,6 +24,7 @@ class Listing < ApplicationRecord
 
 # Active Record callback
   before_save :remove_whitespace
+  before_validation :convert_price_to_cents, if: :price_changed?
 
   private
   def remove_whitespace
@@ -32,5 +33,9 @@ class Listing < ApplicationRecord
     self.brand = self.brand.strip
     self.model = self.model.strip
     self.finish = self.finish.strip
+  end
+
+  def convert_price_to_cents
+    self.price = self.price.to_i * 100
   end
 end
