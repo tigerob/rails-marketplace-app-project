@@ -1,19 +1,6 @@
 <%=form_with model: @listing, local: true do |form|%>
 
-    <%if @listing.errors.any?%>
-        <div class="alert alert-error alert-dismissable fade show">
-            <h5><%=pluralize(@listing.errors.count, "error")%> completing the form</h5>
-            <ul>
-                <%@listing.errors.full_messages.each do |message|%>
-                    <li><%=message%></li>
-                <%end%>
-            </ul>
-    
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    <%end%>
+    <%=render "listing_errors"%>
 
     <div class='form-group mb-3'> 
         <%=form.label :category_id, class: "form-label"%>
