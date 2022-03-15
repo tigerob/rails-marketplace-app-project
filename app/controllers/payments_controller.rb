@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
     def webhook
         # create Stripe event and verify transactions with Stripe 'signing secret'
         begin
-            payload = request.raw_body
+            payload = request.raw_post
             header = request.headers['HTTP_STRIPE_SIGNATURE']
             endpoint_secret = Rails.application.credentials.dig(:stripe, :webhook_signing_secret)
             event = Stripe::Webhook.construct_event(payload, header, endpoint_secret)

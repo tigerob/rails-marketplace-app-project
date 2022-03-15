@@ -18,7 +18,9 @@ end
 # create test data
 
 if User.count == 0
-    user = User.create! :email => "test@test.com", :password => "test12", :password_confirmation => "test12"
+    user_1 = User.create! :email => "test@test.com", :password => "test12", :password_confirmation => "test12"
+    puts "created a test user"
+    user_2 = User.create! :email => "test2@test.com", :password => "test12", :password_confirmation => "test12"
     puts "created a test user"
 end
 
