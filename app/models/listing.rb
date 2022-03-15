@@ -21,4 +21,16 @@ class Listing < ApplicationRecord
   validates :height, length: {maximum: 4}
   validates :width, length: {maximum: 4}
   validates :depth, length: {maximum: 4}
+
+# Active Record callback
+  before_save :remove_whitespace
+
+  private
+  def remove_whitespace
+    self.title = self.title.strip
+    self.description = self.description.strip
+    self.brand = self.brand.strip
+    self.model = self.model.strip
+    self.finish = self.finish.strip
+  end
 end
