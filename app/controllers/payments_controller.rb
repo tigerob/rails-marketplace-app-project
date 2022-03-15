@@ -27,10 +27,10 @@ class PaymentsController < ApplicationController
         @listing = Listing.find(listing_id)
         buyer_id = payment.metadata.user_id
         seller_id = @listing.user_id
-        pp payment.charges.data[0].receipt_url
+        receipt_url = payment.charges.data[0].receipt_url
         @listing.update(sold: true)
 
         #create a record through Purchase model to track purchase information
-        Purchase.create(listing_id: listing_id, buyer_id: buyer_id, seller_id: seller_id, payment_id: payment_intent_id, receipt_url: payment.charges.data[0].receipt_url)
+        Purchase.create(listing_id: listing_id, buyer_id: buyer_id, seller_id: seller_id, payment_id: payment_intent_id, receipt_url: receipt_url)
     end
 end
