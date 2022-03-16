@@ -13,13 +13,8 @@ class Listing < ApplicationRecord
   validates :price, presence: true, numericality: {only_integer: true}, length: {maximum: 6}
   validates :description, presence: true, length: {maximum: 750}
   validates :postcode, numericality: {only_integer: true}, length: {is: 4}
-  validates :brand, length: {maximum: 50}
-  validates :model, length: {maximum: 50}
-  validates :finish, length: {maximum: 50}
-  validates :capacity, length: {maximum: 4}
-  validates :height, length: {maximum: 4}
-  validates :width, length: {maximum: 4}
-  validates :depth, length: {maximum: 4}
+  validates :brand, :model, :finish, presence: true, length: {maximum: 50}
+  validates :capacity, :height, :width, :depth, length: {maximum: 4}
 
 # Active Record callback
   before_save :remove_whitespace
