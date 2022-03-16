@@ -9,10 +9,18 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 97vh;
+    height: 93vh;
     width: 100%;
     background-color: rgba(11, 121, 172, 0.863);
     background-size: cover;
+}
+
+.success-page {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .home-image-container {
@@ -24,3 +32,7 @@ img {
     width: 100%;
     object-fit: contain;
     }
+
+.small_font {
+    font-size: 0.7em;
+}

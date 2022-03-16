@@ -1,2 +1,4 @@
-<p>You have successfully purchased <%=@purchase.listing.title%>!</p>
-<%=link_to "See and download your receipt here", @purchase.receipt_url%>
+<div class="success-page text-center">
+    <p class="text-muted font-weight-bold p-5">You have successfully purchased <%=@purchase.listing.title%>!</p>
+    <%=link_to "See and download your receipt here", @purchase.receipt_url%>
+</div>
