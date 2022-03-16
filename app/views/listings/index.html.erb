@@ -1,13 +1,13 @@
-<h1 class="hero-title text-center">Listings</h1>
+<h1 class="text-center display-4po b text-muted p-5">Fridges listed</h1>
 <section class="container">
-    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         <%@listings.each do |listing|%>
-        <div class="col mb-4">
-            <div class="card border-dark h-100">
+        <div class="row col p-5">
+            <div class="card-img-top h-50">
                 <%=display_photo(listing)%>
                 <div class="card-body">
-                    <h5><%=link_to "#{listing.title}", listing_path(listing.id)%></h5>
-                    <h5><%=format_price(listing.price)%></h5>
+                    <p class="card-text font-weight-bold"><%=format_price(listing.price)%></p>
+                    <p class="card-text font-weight-bold"><%=link_to "#{listing.title}", listing_path(listing.id)%></p>
                 </div>
             </div>
         </div>
