@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 # create categories and features
 
 categories = ["Kitchen fridge", "Bar fridge", "Stand-alone freezer"]
@@ -36,12 +38,12 @@ if User.count == 0
 end
 
 if Listing.count == 0
-    Listing.create(title: "Samsung 427L Bottom-mount Fridge", description: "Approximately four years old. I am selling because I am moving house. Perfect working order. Some superficial scratches and marks (see photos).", price: 15000, condition: 3, postcode: 3101, brand: "Samsung", model: "SRL456LS", finish: "Stainless Steel Facia", capacity: 427, height: 1700, width: 700, depth: 705, energy_efficiency: 4, user_id: 1, category_id: 1)
+    Listing.create(title: "Samsung 427L Bottom-mount Fridge", description: "Approximately four years old. I am selling because I am moving house. Perfect working order. Some superficial scratches and marks (see photo).", price: 250, condition: 3, postcode: 3101, brand: "Samsung", model: "SRL456LS", finish: "Stainless Steel Facia", capacity: 427, height: 1700, width: 700, depth: 705, energy_efficiency: 4, user_id: 1, category_id: 1)
     puts "created a test listing"
 
-    Listing.create(title: "Euromaid 87L Top-Mount Bar Fridge", description: "Never used. I won this item in a raffle.", price: 10000, condition: 1, postcode: 3101, brand: "Euromaid", model: "ETM87W", finish: "White cabinet/facia", capacity: 87, height: 850, width: 480, depth: 520, energy_efficiency: 2, user_id: 1, category_id: 1)
+    Listing.create(title: "Euromaid 87L Top-Mount Bar Fridge", description: "Never used. I won this item in a raffle.", price: 120, condition: 1, postcode: 3101, brand: "Euromaid", model: "ETM87W", finish: "White cabinet/facia", capacity: 87, height: 850, width: 480, depth: 520, energy_efficiency: 2, user_id: 1, category_id: 1)
     puts "created a test listing"
 
-    Listing.create(title: "Haier 519L Chest Freezer", description: "Approximately eight years old. Works fine, but has been reasonably well used.", price: 9000, condition: 4, postcode: 3101, brand: "Haier", model: "Unknown", finish: "White cabinet", capacity: 519, height: 845, width: 1645, depth: 745, energy_efficiency: 3, user_id: 1, category_id: 3)
+    Listing.create(title: "Haier 519L Chest Freezer", description: "Approximately eight years old. Works fine, but has been reasonably well used.", price: 80, condition: 4, postcode: 3101, brand: "Haier", model: "Unknown", finish: "White cabinet", capacity: 519, height: 845, width: 1645, depth: 745, energy_efficiency: 3, user_id: 1, category_id: 3)
     puts "created a test listing"
 end
