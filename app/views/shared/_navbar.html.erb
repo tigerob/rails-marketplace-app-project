@@ -1,7 +1,24 @@
-<%=link_to "All Listings", listings_path%>
-<%if user_signed_in?%>
-    <%=link_to "Create listing", new_listing_path%>
-    <%=link_to "Sign out", destroy_user_session_path, method: :delete%>
-<%else%>
-    <%=link_to "Sign in", new_user_session_path%>
-<%end%>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #FBF2E4">
+    <div class="container-fluid">
+        <%=link_to "Fridges For All", root_path, class: "navbar-brand"%>
+    </div>
+    <div>
+        <ul class="navbar-nav mr-5-lg">
+            <li class="nav-item">
+                <%=link_to "All Listings", listings_path%>
+            </li>
+                <%if user_signed_in?%>
+            <li class="nav-item">
+                    <%=link_to "Create listing", new_listing_path%>
+            </li>
+            <li class="nav-item">
+                    <%=link_to "Sign out", destroy_user_session_path, method: :delete%>
+            </li>
+                <%else%>
+            <li class="nav-item">
+                    <%=link_to "Sign in", new_user_session_path%>
+            <li>
+                <%end%>
+        </ul>
+    </div>
+</nav>
