@@ -1,79 +1,81 @@
-<section class="container d-flex flex-column flex-lg-row p-5">
+<div style="background-color: #F2F6F4">
+    <section class="container d-flex flex-column flex-lg-row p-5">
 
-    <div class="sidebar col-lg-4 p-0 mx-2 d-md-block"> 
-        <h2 class="text-center display-4po b text-muted mb-sm-2 mb-md-3"><%=@listing.title%></h2>
+        <div class="sidebar col-lg-4 p-0 mx-2 d-md-block"> 
+            <h2 class="text-center display-4po b text-muted mb-sm-2 mb-md-3"><%=@listing.title%></h2>
 
-        <p></p>
-        <p class="text-muted font-weight-bold d-inline">Category &nbsp&nbsp&nbsp</p><p><%=@listing.category.name%></p>
-        <p class="text-muted font-weight-bold d-inline">Price &nbsp&nbsp&nbsp</p><p><%=format_price(@listing.price)%></p>
+            <p></p>
+            <p class="text-muted font-weight-bold d-inline">Category &nbsp&nbsp&nbsp</p><p><%=@listing.category.name%></p>
+            <p class="text-muted font-weight-bold d-inline">Price &nbsp&nbsp&nbsp</p><p><%=format_price(@listing.price)%></p>
 
-        <p></p>
-        <p class="text-muted font-weight-bold">Features &nbsp&nbsp&nbsp</p>
-        <%@listing.features.each do |feature|%>
-            <span class="badge badge-pill badge-light mb-sm-2 mb-md-3 p-2"><%=feature.name%></span>
-        <%end%>
-        
-        <p></p>
-        <p class="text-muted font-weight-bold d-inline">Condition &nbsp&nbsp&nbsp</p><p><%=format_condition(@listing.condition)%></p>
-        <p class="text-muted font-weight-bold d-inline">Description &nbsp&nbsp&nbsp</p><p><%=@listing.description%></p>
-        <p class="text-muted font-weight-bold d-inline">Location (postcode) &nbsp&nbsp&nbsp</p><p><%=@listing.postcode%></p>
-        <p class="text-muted font-weight-bold d-inline">Brand &nbsp&nbsp&nbsp</p><p><%=@listing.brand%></p>
-        <p class="text-muted font-weight-bold d-inline">Model &nbsp&nbsp&nbsp</p><p><%=@listing.model%></p>
-        <p class="text-muted font-weight-bold d-inline">Finish &nbsp&nbsp&nbsp</p><p><%=@listing.finish%></p>
+            <p></p>
+            <p class="text-muted font-weight-bold">Features &nbsp&nbsp&nbsp</p>
+            <%@listing.features.each do |feature|%>
+                <span class="badge badge-pill badge-light mb-sm-2 mb-md-3 p-2"><%=feature.name%></span>
+            <%end%>
+            
+            <p></p>
+            <p class="text-muted font-weight-bold d-inline">Condition &nbsp&nbsp&nbsp</p><p><%=format_condition(@listing.condition)%></p>
+            <p class="text-muted font-weight-bold d-inline">Description &nbsp&nbsp&nbsp</p><p><%=@listing.description%></p>
+            <p class="text-muted font-weight-bold d-inline">Location (postcode) &nbsp&nbsp&nbsp</p><p><%=@listing.postcode%></p>
+            <p class="text-muted font-weight-bold d-inline">Brand &nbsp&nbsp&nbsp</p><p><%=@listing.brand%></p>
+            <p class="text-muted font-weight-bold d-inline">Model &nbsp&nbsp&nbsp</p><p><%=@listing.model%></p>
+            <p class="text-muted font-weight-bold d-inline">Finish &nbsp&nbsp&nbsp</p><p><%=@listing.finish%></p>
 
-        <%if @listing.capacity%>
-            <p class="text-muted font-weight-bold d-inline">Capacity &nbsp&nbsp&nbsp</p><p><%=@listing.capacity%> litres</p>
-        <%end%>
-        <%if @listing.height%>
-            <p class="text-muted font-weight-bold d-inline">Height &nbsp&nbsp&nbsp</p><p><%=@listing.height%>mm</p>
-        <%end%>
-        <%if @listing.width%>        
-            <p class="text-muted font-weight-bold d-inline">Width &nbsp&nbsp&nbsp</p><p><%=@listing.width%>mm</p>
-        <%end%>
-        <%if @listing.depth%>
-            <p class="text-muted font-weight-bold d-inline">Depth &nbsp&nbsp&nbsp</p><p><%=@listing.depth%>mm</p>
-        <%end%>
-        <%if @listing.energy_efficiency%>
-            <p class="text-muted font-weight-bold d-inline">Energy-efficiency rating (out of 5) &nbsp&nbsp&nbsp</p><p><%=@listing.energy_efficiency%></p>
-        <%end%>
+            <%if @listing.capacity%>
+                <p class="text-muted font-weight-bold d-inline">Capacity &nbsp&nbsp&nbsp</p><p><%=@listing.capacity%> litres</p>
+            <%end%>
+            <%if @listing.height%>
+                <p class="text-muted font-weight-bold d-inline">Height &nbsp&nbsp&nbsp</p><p><%=@listing.height%>mm</p>
+            <%end%>
+            <%if @listing.width%>        
+                <p class="text-muted font-weight-bold d-inline">Width &nbsp&nbsp&nbsp</p><p><%=@listing.width%>mm</p>
+            <%end%>
+            <%if @listing.depth%>
+                <p class="text-muted font-weight-bold d-inline">Depth &nbsp&nbsp&nbsp</p><p><%=@listing.depth%>mm</p>
+            <%end%>
+            <%if @listing.energy_efficiency%>
+                <p class="text-muted font-weight-bold d-inline">Energy-efficiency rating (out of 5) &nbsp&nbsp&nbsp</p><p><%=@listing.energy_efficiency%></p>
+            <%end%>
 
-        <%if current_user && current_user.id == @listing.user_id%>
-            <div class="d-flex justify-content-equally">
-                <%if @listing.sold == false%>
-                    <%=link_to "Edit", edit_listing_path(@listing.id), class: "btn btn-dark p-2 mb-3 mr-3"%>
-                <%end%>
-                <%= link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-dark p-2 mb-3 mr-3"%>
-            </div>
-        <%end%>
+            <%if current_user && current_user.id == @listing.user_id%>
+                <div class="d-flex justify-content-equally">
+                    <%if @listing.sold == false%>
+                        <%=link_to "Edit", edit_listing_path(@listing.id), class: "btn btn-dark p-2 mb-3 mr-3"%>
+                    <%end%>
+                    <%= link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-dark p-2 mb-3 mr-3"%>
+                </div>
+            <%end%>
 
-        <%if current_user && current_user.id != @listing.user_id && @listing.sold == false%>
-            <button class="btn btn-dark p-2 mb-3 mr-3" data-stripe="payment">Buy (<%=format_price(@listing.price)%>)</button>
-        <%elsif @listing.sold%>
-            <button class="btn btn-light p-2 mb-3 mr-3" disabled>Sold</button>
-        <%elsif current_user && current_user.id == @listing.user_id%>
-        <%else%>
-            <%=button_to "Sign in to buy", new_user_session_path, class: "btn btn-dark p-2 mb-3 mr-3"%>
-        <%end%>
-    </div>
-    
-    <div class="content col-12 col-md-7 col-lg-8 p-0 pr-md-3">
-        <div class="col-12 p-0 main-preview mb-4">
-            <%=display_photo(@listing)%>
+            <%if current_user && current_user.id != @listing.user_id && @listing.sold == false%>
+                <button class="btn btn-dark p-2 mb-3 mr-3" data-stripe="payment">Buy (<%=format_price(@listing.price)%>)</button>
+            <%elsif @listing.sold%>
+                <button class="btn btn-light p-2 mb-3 mr-3" disabled>Sold</button>
+            <%elsif current_user && current_user.id == @listing.user_id%>
+            <%else%>
+                <%=button_to "Sign in to buy", new_user_session_path, class: "btn btn-dark p-2 mb-3 mr-3"%>
+            <%end%>
         </div>
-    </div>
+        
+        <div class="content col-12 col-md-7 col-lg-8 p-0 pr-md-3">
+            <div class="col-12 p-0 main-preview mb-4">
+                <%=display_photo(@listing)%>
+            </div>
+        </div>
 
-</section>
+    </section>
 
 
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-document
-    .querySelector("[data-stripe='payment']")
-    .addEventListener("click", () => {
-        const stripe = Stripe("<%=Rails.application.credentials.dig(:stripe, :public_key)%>");
-        console.log(stripe);
-        stripe.redirectToCheckout({
-            sessionId: "<%=@session_id%>"
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+    document
+        .querySelector("[data-stripe='payment']")
+        .addEventListener("click", () => {
+            const stripe = Stripe("<%=Rails.application.credentials.dig(:stripe, :public_key)%>");
+            console.log(stripe);
+            stripe.redirectToCheckout({
+                sessionId: "<%=@session_id%>"
+            })
         })
-    })
-</script>
+    </script>
+</div>
