@@ -2,11 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.home-background {
+.background {
+    color: rgb(232, 231, 235);
     display: flex;
-    justify-content: center;
-    height: 95vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 97vh;
     width: 100%;
-    background-image: url(image-path('home_background.jpg'));
+    background-color: rgba(11, 121, 172, 0.863);
     background-size: cover;
 }
+
+.home-text {
+    text-align: center;
+}
+
+.home-image-container {
+    height: 40vh;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    }
