@@ -46,7 +46,9 @@
 
         <%if current_user && current_user.id == @listing.user_id%>
             <div class='d-flex justify-content-equally'>
-                <%= link_to "Edit", edit_listing_path(@listing.id), class: "btn btn-warning mr-2" %>
+                <%if @listing.sold == false%>
+                    <%= link_to "Edit", edit_listing_path(@listing.id), class: "btn btn-warning mr-2" %>
+                <%end%>
                 <%= link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
             </div>
         <%end%>
