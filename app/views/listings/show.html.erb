@@ -50,7 +50,7 @@
             <button class="btn btn-dark p-2 mb-3 mr-3" data-stripe="payment">Buy (<%=format_price(@listing.price)%>)</button>
         <%elsif @listing.sold%>
             <button class="btn btn-light p-2 mb-3 mr-3" disabled>Sold</button>
-        <%elsif current_user.id == @listing.user_id%>
+        <%elsif current_user && current_user.id == @listing.user_id%>
         <%else%>
             <%=button_to "Sign in to buy", new_user_session_path, class: "btn btn-dark p-2 mb-3 mr-3"%>
         <%end%>
