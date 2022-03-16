@@ -11,8 +11,8 @@ class Listing < ApplicationRecord
   # data validations
   validates :title, presence: true, length: {maximum: 50}
   validates :price, presence: true, numericality: {only_integer: true}, length: {maximum: 6}
-  validates :description, presence: true, length: {maximum: 750}
-  validates :postcode, numericality: {only_integer: true}, length: {is: 4}
+  validates :description, presence: true, length: {maximum: 255}
+  validates :postcode, presence: true, numericality: {only_integer: true}, length: {is: 4}
   validates :brand, :model, :finish, presence: true, length: {maximum: 50}
   validates :capacity, :height, :width, :depth, length: {maximum: 4}
 

@@ -2,86 +2,86 @@
 
     <%=render "listing_errors"%>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :category_id, class: "form-label"%>
         <%=form.select :category_id, @categories.map {|category| [category.name, category.id]}, class: "form-select"%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :title, class: "form-label"%>
-        <%=form.text_field :title%>
+        <%=form.text_field :title, maxlength: 50, size: 40%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :price, "Price $", class: "form-label"%>
-        <%=form.number_field :price, step: "1"%>
+        <%=form.number_field :price, step: "1", max: 999999%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :photo, class: "form-label"%>
         <%=form.file_field :photo, accept: "image/png,image/jpg,image/jpeg", class: "form-select"%>
     </div>
 
-    <p class="mb-3">Condition</p>
+    <p class="font-weight-bold d-inline">Condition &nbsp&nbsp</p>
     <%@conditions.each do |c|%>
         <%=form.label :condition, format_condition(c), class: "form-label mr-1" %>
-        <%=form.radio_button :condition, c, class:"mr-2"%>
+        <%=form.radio_button :condition, c, class:"mr-4"%>
     <%end%>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :description, class: "form-label"%>
-        <%=form.text_area :description, class: "form-control"%>
+        <%=form.text_area :description, class: "form-control", maxlength: 255%>
     </div>
 
-    <p class="mb-3">Features</p>
+    <p class="font-weight-bold d-inline mb-3">Features</p>
     <div class="form-check form-check-line mb-3 ml-2">
         <%=form.collection_check_boxes :feature_ids, @features, :id, :name  do |block|%>
             <%=block.label class: "form-check-label"%>
-            <%=block.check_box class: "form-check-line mr-2"%>
+            <%=block.check_box class: "form-check-line mr-4"%>
         <%end%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :postcode, "Location (postcode)", class: "form-label"%>
-        <%=form.number_field :postcode%>
+        <%=form.number_field :postcode, max: 9999%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :brand, class: "form-label"%>
-        <%=form.text_field :brand%>
+        <%=form.text_field :brand, maxlength: 50, size: 40%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :model, class: "form-label"%>
-        <%=form.text_field :model%>
+        <%=form.text_field :model, maxlength: 50, size: 40%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :finish, "Finish (colour and material)", class: "form-label"%>
-        <%=form.text_field :finish%>
+        <%=form.text_field :finish, maxlength: 50, size: 40%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :capacity, "Capacity (litres)", class: "form-label"%>
-        <%=form.number_field :capacity%>
+        <%=form.number_field :capacity, max: 9999%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :height, "Height (mm)", class: "form-label"%>
-        <%=form.number_field :height%>
+        <%=form.number_field :height, max: 9999%>
     </div>
 
-    <div class='form-group mb-3'> 
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :width, "Width (mm)", class: "form-label"%>
-        <%=form.number_field :width%>
+        <%=form.number_field :width, max: 9999%>
     </div>
 
-    <div class='form-group mb-3'>
+    <div class="form-group font-weight-bold mb-3">
         <%=form.label :depth, "Depth (mm)", class: "form-label"%>
-        <%=form.number_field :depth%>
+        <%=form.number_field :depth, max: 9999%>
     </div>
 
-    <p class="mb-3">Energy-efficiency rating</p>
+    <p class="font-weight-bold mb-1">Energy-efficiency rating</p>
         <%=form.label :energy_efficiency, 1, class: "form-label mr-1" %>
         <%=form.radio_button :energy_efficiency, 1, class:"mr-3"%>
         <%=form.label :energy_efficiency, 2, class: "form-label mr-1" %>
@@ -93,7 +93,7 @@
         <%=form.label :energy_efficiency, 5, class: "form-label mr-1" %>
         <%=form.radio_button :energy_efficiency, 5, class:"mr-3"%>
 
-    <div class='actions'> 
+    <div class="actions my-4">
         <%=form.submit%>
     </div>
 <%end%>
