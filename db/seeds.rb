@@ -52,5 +52,4 @@ if Listing.count == 0
 
     Listing.create(title: "Black Outdoor Bar Fridge", description: "Selling on behalf of my parents. They have used this bar fridge on their back porch for circa 5 years. Pick up in Essendon.", price: 220, condition: 3, postcode: 3040, brand: "Unknown", model: "Uknown", finish: "Black", user_id: 2, category_id: 2)
     puts "created a test listing"
-
 end
