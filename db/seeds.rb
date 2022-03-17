@@ -38,12 +38,19 @@ if User.count == 0
 end
 
 if Listing.count == 0
-    Listing.create(title: "Samsung 427L Bottom-mount Fridge", description: "Approximately four years old. I am selling because I am moving house. Perfect working order. Some superficial scratches and marks (see photo).", price: 250, condition: 3, postcode: 3101, brand: "Samsung", model: "SRL456LS", finish: "Stainless Steel Facia", capacity: 427, height: 1700, width: 700, depth: 705, energy_efficiency: 4, user_id: 1, category_id: 1)
+    Listing.create(title: "Samsung 427L Bottom-mount Fridge", description: "Approximately four years old. I am selling because I am moving house. Perfect working order. Some superficial scratches and marks (see photo).", price: 350, condition: 3, postcode: 3101, brand: "Samsung", model: "SRL456LS", finish: "Stainless Steel Facia", capacity: 427, height: 1700, width: 700, depth: 705, energy_efficiency: 4, user_id: 1, category_id: 1)
     puts "created a test listing"
 
-    Listing.create(title: "Euromaid 87L Top-Mount Bar Fridge", description: "Never used. I won this item in a raffle.", price: 120, condition: 1, postcode: 3101, brand: "Euromaid", model: "ETM87W", finish: "White cabinet/facia", capacity: 87, height: 850, width: 480, depth: 520, energy_efficiency: 2, user_id: 1, category_id: 1)
+    Listing.create(title: "Euromaid 87L Top-Mount Bar Fridge", description: "Never used. I won this item in a raffle.", price: 120, condition: 1, postcode: 3101, brand: "Euromaid", model: "ETM87W", finish: "White cabinet/facia", capacity: 87, height: 850, width: 480, depth: 520, energy_efficiency: 2, user_id: 1, category_id: 2)
     puts "created a test listing"
 
     Listing.create(title: "Haier 519L Chest Freezer", description: "Approximately eight years old. Works fine, but has been reasonably well used.", price: 80, condition: 4, postcode: 3101, brand: "Haier", model: "Unknown", finish: "White cabinet", capacity: 519, height: 845, width: 1645, depth: 745, energy_efficiency: 3, user_id: 1, category_id: 3)
     puts "created a test listing"
+
+    Listing.create(title: "Samsung 625L French Door Fridge (RRP $4,499)", description: "Nearly new. Doesn't fit in my new house - need to sell before 29 March.", price: 1200, condition: 2, postcode: 3067, brand: "Samsung", model: "SRF662BFH4", finish: "Black cabinet, steel doors", capacity: 625, height: 1777, width: 908, depth: 788, energy_efficiency: 3, user_id: 2, category_id: 1)
+    puts "created a test listing"
+
+    Listing.create(title: "Black Outdoor Bar Fridge", description: "Selling on behalf of my parents. They have used this bar fridge on their back porch for circa 5 years. Pick up in Essendon.", price: 220, condition: 3, postcode: 3040, brand: "Unknown", model: "Uknown", finish: "Black", user_id: 2, category_id: 2)
+    puts "created a test listing"
+
 end
