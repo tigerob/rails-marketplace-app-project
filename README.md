@@ -193,7 +193,7 @@ The administrator of Fridges For All has access to the Fridges For All Stripe ac
 
 ### **Ultrahook**
 
-Ultrahook is service that provides a way for web apps to securely receive webhooks (HTTP requests made when certain events are triggered within the app) behind a firewall. It achieves this by providing clients with a persist public endpoint that has permission to pass on all webhooks received to the client's app.
+Ultrahook is service that provides a way for web apps to securely receive webhooks (HTTP requests made when certain events are triggered within the app) behind a firewall. It achieves this by providing clients with a persistent public endpoint that has permission to pass on all webhooks received to the client's app.
 
 Fridges For All utilises Ultrahooks to securely receive webhooks made in response to the successful completion of a Stripe payment event. This allows Fridges For All to receive confirmation of a successful payment and, consequently, notify users and update its databases to reflect all changes (e.g. the sold status of a listing).
 
