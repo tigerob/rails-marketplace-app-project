@@ -26,7 +26,7 @@ If successful, Fridges For All could consider the potential of expanding to oper
 
 <br>
 
-## Deployed App
+## Deployed app
 ---
 
 https://fridges-for-all.herokuapp.com/
