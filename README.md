@@ -36,7 +36,7 @@ https://fridges-for-all.herokuapp.com/
 ## GitHub repository
 ---
 
-https://github.com/tigerob/project-rails-marketplace-app
+https://github.com/tigerob/rails-marketplace-app-project
 
 <br>
 
